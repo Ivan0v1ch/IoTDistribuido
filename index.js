@@ -7,22 +7,22 @@ const port = 8080;
 let state = 'apagado';
 
 app.get('/', (req, res) => {
-    res.json({ mensaje: "Hola" });
+    res.send("Hola");
 })
 
 app.get('/on', (req, res) => {
     state = 'encendido'
-    res.json({ estado: state });
+    res.send({ state });
 })
 
 app.get('/off', (req, res) => {
     state = 'apagado'
-    res.json({ estado: state });
+    res.send({ state });
 })
 
 
 app.get('/status', (req, res) => {
-    res.json({ estado: state });
+    res.send({ state })
 })
 
 
